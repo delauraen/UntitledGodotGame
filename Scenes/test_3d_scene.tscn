@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b7x4cdch37sb8"]
+
+[node name="Test3DScene" type="Node3D"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Hello world"
+horizontal_alignment = 1
+vertical_alignment = 1
