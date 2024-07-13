@@ -11,7 +11,7 @@ tile_size = Vector2i(32, 16)
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
-text = "Hello world"
+text = "Hello, world"
 horizontal_alignment = 1
 vertical_alignment = 1
 
