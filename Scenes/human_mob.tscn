@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://ci7uselk75e0v"]
+
+[ext_resource type="Script" path="res://Scripts/human_mob.gd" id="1_be2tn"]
+[ext_resource type="Texture2D" uid="uid://cny4lnrgf4w12" path="res://Sprites/basic_human_model.png" id="1_w8sl5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oc701"]
+size = Vector2(12.5273, 14)
+
+[node name="PathFollow" type="PathFollow2D"]
+z_index = 3
+y_sort_enabled = true
+position = Vector2(0, -2)
+loop = false
+script = ExtResource("1_be2tn")
+
+[node name="HumanMob" type="CharacterBody2D" parent="." groups=["wave_mobs"]]
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="HumanMob"]
+position = Vector2(0, -8)
+texture = ExtResource("1_w8sl5")
+offset = Vector2(0, -60)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HumanMob"]
+position = Vector2(-3, -7)
+shape = SubResource("RectangleShape2D_oc701")

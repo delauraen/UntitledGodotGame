@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://6dnvhire4gqi"]
+
+[ext_resource type="Script" path="res://Scripts/rat_tower.gd" id="1_y4kih"]
+[ext_resource type="Texture2D" uid="uid://cvo4gnm00wl0s" path="res://Art/BasicRatTowerL.png" id="2_lq4rx"]
+[ext_resource type="Texture2D" uid="uid://b3v5hahu4frtw" path="res://Art/BasicRatTowerR.png" id="3_qqbns"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2atvs"]
+radius = 30.0666
+
+[node name="ratTower" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_y4kih")
+
+[node name="RatTowerL" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_lq4rx")
+
+[node name="Area2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2atvs")
+
+[node name="cannon" type="Marker2D" parent="."]
+position = Vector2(-27, -3)
+
+[node name="RatTowerR" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_qqbns")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
