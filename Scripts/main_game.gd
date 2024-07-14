@@ -5,9 +5,11 @@ extends Node2D
 @onready var spawn = $LevelOne/Path/Spawn
 @onready var total_coins = $HUD/totalCoins
 @onready var total_cheese = $HUD/totalCheese
+@onready var total_waves = $HUD/currentWave
+@onready var enemies_left = $HUD/enemiesLeft
 
 var current_wave = 0
-var enemies_in_wave = 0
+var alive_enemies = 0
 var spawn_cooldown = 0.5
 var coins = 0
 var cheese = 10
@@ -20,6 +22,8 @@ func _ready():
 func _physics_process(delta):
 		total_cheese.text = "Cheese x " + str(cheese)
 		total_coins.text = "Coins x " + str(coins)
+		total_waves.text = "Current Wave: " + str(current_wave)
+		enemies_left.text = "Enemies Left: " + str(alive_enemies)
 
 func iterate_wave():
 	var wave_mobs = [["human_mob", spawn_cooldown], ["human_mob", spawn_cooldown], 
@@ -29,7 +33,7 @@ func iterate_wave():
 		["human_mob", spawn_cooldown], ["human_mob", spawn_cooldown], 
 		["human_mob", spawn_cooldown], ["human_mob", spawn_cooldown]]
 	current_wave += 1
-	enemies_in_wave = wave_mobs.size()
+	alive_enemies = wave_mobs.size()
 	return wave_mobs
 	
 func spawn_wave(wave_data):
