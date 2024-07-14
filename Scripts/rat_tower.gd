@@ -3,9 +3,11 @@ extends Area2D
 var tower_ammo = preload("res://Scenes/tower_ammo.tscn")
 @onready var cannon = $cannon
 var ready_to_fire = true
-var tower_radius: float = 150.0
+var tower_radius: float = 250.0
 var cooldown = 5
 var enemies_in_range = []
+@onready var rat_tower_l = $RatTowerL
+@onready var rat_tower_r = $RatTowerR
 
 func _physics_process(delta):
 	if ready_to_fire:
@@ -27,8 +29,13 @@ func find_enemy():
 func shoot(enemy):
 	if enemy == null: return
 	ready_to_fire = false
-	print("shoot")
-	print(enemy)
+	if (enemy.global_position.x-global_position.x) > 0:
+		rat_tower_l.visible = false
+		rat_tower_r.visible = true
+	else:
+		rat_tower_l.visible = true
+		rat_tower_r.visible = false
+	
 	var bullet = tower_ammo.instantiate()
 	add_child(bullet)
 	bullet.global_position = cannon.global_position

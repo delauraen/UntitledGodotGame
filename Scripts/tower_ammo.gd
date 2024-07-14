@@ -19,13 +19,16 @@ func _physics_process(delta: float) -> void:
 	var v = direction * SPEED * delta
 	var c: = move_and_collide(v)
 	if c:
-		c.get_collider().queue_free()
-		queue_free()
+		if c.get_collider().is_in_group("wave_mobs"):
+			c.get_collider().queue_free()
+			get_parent().get_parent().get_parent().get_parent().coins += 1
+			queue_free()
 	
-func on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("wave_mobs"):
-		body.apply_damage(damage)
-		queue_free()
+#func on_body_entered(body: Node2D) -> void:
+	#if body.is_in_group("wave_mobs"):
+		#body.apply_damage(damage)
+		#queue_free()
+		#print(get_tree())
 	
 func _on_timer_timeout():
 	queue_free()
