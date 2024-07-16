@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://4cl0lwqxmi1c"]
+[gd_scene load_steps=2 format=3 uid="uid://103023mtagu5"]
 
-[ext_resource type="Texture2D" uid="uid://def3fvc8hyv7i" path="res://Art/merchproto.png" id="1_i6i4r"]
+[ext_resource type="Texture2D" path="res://Art/merchproto.png" id="1_i6i4r"]
 
 [node name="MerchantScene" type="Node2D"]
 
@@ -41,3 +41,8 @@ offset_right = 71.0
 offset_bottom = -2.0
 scale = Vector2(0.763332, 0.84842)
 text = "Rat Tower 2"
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "new label"
