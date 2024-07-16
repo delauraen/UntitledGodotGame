@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvo4gnm00wl0s"
-path="res://.godot/imported/BasicRatTowerL.png-579ec4da228b345dc4860ce003ae6f08.ctex"
+uid="uid://h0bensd7u6f1"
+path="res://.godot/imported/BasicRatTowerUR.png-c7274a441738f3e0fad7ed950cf3af64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BasicRatTowerL.png"
-dest_files=["res://.godot/imported/BasicRatTowerL.png-579ec4da228b345dc4860ce003ae6f08.ctex"]
+source_file="res://Art/BasicRatTowerUR.png"
+dest_files=["res://.godot/imported/BasicRatTowerUR.png-c7274a441738f3e0fad7ed950cf3af64.ctex"]
 
 [params]
 
