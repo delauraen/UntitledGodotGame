@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://4cl0lwqxmi1c"]
+
+[ext_resource type="Texture2D" uid="uid://def3fvc8hyv7i" path="res://Art/merchproto.png" id="1_i6i4r"]
+
+[node name="MerchantScene" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(557, 320)
+texture = ExtResource("1_i6i4r")
+
+[node name="CostDisplay" type="Node2D" parent="."]
+position = Vector2(488, 255)
+
+[node name="Sprite2D" type="Sprite2D" parent="CostDisplay"]
+
+[node name="BuyButton" type="Button" parent="CostDisplay/Sprite2D"]
+offset_left = -10.0
+offset_top = -1.0
+offset_right = -2.0
+offset_bottom = 7.0
+scale = Vector2(5.83705, 3.06727)
+
+[node name="TextureButton" type="TextureButton" parent="CostDisplay/Sprite2D/BuyButton"]
+layout_mode = 0
+offset_left = -11.6497
+offset_top = -35.8625
+offset_right = 28.3503
+offset_bottom = 4.13745
+
+[node name="CostAmount" type="Label" parent="CostDisplay/Sprite2D"]
+offset_left = -3.0
+offset_top = -1.0
+offset_right = 37.0
+offset_bottom = 22.0
+text = "100"
+
+[node name="NameItem" type="Label" parent="CostDisplay"]
+offset_left = -21.0
+offset_top = -25.0
+offset_right = 71.0
+offset_bottom = -2.0
+scale = Vector2(0.763332, 0.84842)
+text = "Rat Tower 2"
