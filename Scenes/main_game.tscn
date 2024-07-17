@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://gl2buyy8nw3w"]
+[gd_scene load_steps=10 format=3 uid="uid://gl2buyy8nw3w"]
 
 [ext_resource type="Texture2D" uid="uid://dgwf22emhuqw6" path="res://Sprites/Sheets/tilesheet_complete.png" id="1_t4c7f"]
 [ext_resource type="Script" path="res://Scripts/main_game.gd" id="1_y4jkf"]
 [ext_resource type="PackedScene" uid="uid://6dnvhire4gqi" path="res://Scenes/rat_tower.tscn" id="3_ljo4c"]
+[ext_resource type="PackedScene" uid="uid://bxqsbitebdiqf" path="res://Scenes/rat_trap_tower.tscn" id="4_35631"]
 [ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="4_gphvl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_axa2o"]
@@ -495,7 +496,13 @@ layer_2/z_index = 2
 layer_2/tile_data = PackedInt32Array()
 
 [node name="Path" type="Path2D" parent="LevelOne"]
+z_index = 1
 curve = SubResource("Curve2D_xpqma")
+
+[node name="PolyPath" type="Polygon2D" parent="LevelOne/Path"]
+z_index = 2
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-280, -132, -331, -100, 444, 363, 779, 166, 109, -231, 329, -361, 1066, 65, 1118, 36, 337, -427, 2, -230, 674, 163, 448, 297)
 
 [node name="Defenses" type="Node2D" parent="LevelOne"]
 z_index = 2
@@ -505,6 +512,9 @@ position = Vector2(86, 48)
 
 [node name="ratTower3" parent="LevelOne/Defenses" instance=ExtResource("3_ljo4c")]
 position = Vector2(334, -348)
+
+[node name="RatTrapTower" parent="LevelOne/Defenses" instance=ExtResource("4_35631")]
+position = Vector2(163, -237)
 
 [node name="EndZone" type="Area2D" parent="LevelOne"]
 position = Vector2(1063, 33)

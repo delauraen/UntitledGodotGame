@@ -27,10 +27,6 @@ func _physics_process(delta):
 
 func iterate_wave():
 	var wave_mobs = [["human_mob", spawn_cooldown], ["human_mob", spawn_cooldown], 
-		["human_mob", spawn_cooldown], ["human_mob", spawn_cooldown], 
-		["human_mob", spawn_cooldown], ["human_mob", spawn_cooldown], 
-		["human_mob", spawn_cooldown], ["human_mob", spawn_cooldown], 
-		["human_mob", spawn_cooldown], ["human_mob", spawn_cooldown], 
 		["human_mob", spawn_cooldown], ["human_mob", spawn_cooldown]]
 	current_wave += 1
 	alive_enemies = wave_mobs.size()
@@ -40,12 +36,11 @@ func spawn_wave(wave_data):
 	for i in wave_data:
 		var new_enemy = load("res://Scenes/" +  i[0] + ".tscn").instantiate()
 		path.add_child(new_enemy)
-		new_enemy.SPEED = 250
+		new_enemy.SPEED = 50
 		await(get_tree().create_timer(i[1]).timeout)
 			
 
 func _on_end_zone_body_entered(body):
-	print(body)
 	if body.is_in_group("wave_mobs"):
 		body.queue_free()
 	cheese -= 1
