@@ -20,8 +20,7 @@ func _physics_process(delta: float) -> void:
 	var c: = move_and_collide(v)
 	if c:
 		if c.get_collider().is_in_group("wave_mobs"):
-			c.get_collider().queue_free()
-			get_parent().get_parent().get_parent().get_parent().coins += 1
+			c.get_collider().get_parent().take_damage(damage)
 			queue_free()
 	
 #func on_body_entered(body: Node2D) -> void:
